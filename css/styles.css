@@ -4,6 +4,7 @@
     --CLOUD: #F4F4FD;
     --icon-color: #f4f4fd;
     --overlay-color: #f4f4fd;
+    --backdrop-text-color: #2E2F42;
     --item-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -536,8 +537,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 1;
 }
 
@@ -588,16 +588,26 @@ body {
     fill: #fff;
 }
 
+.close-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .popup-title {
     font-weight: 500;
     font-size: 16px;
+    letter-spacing: 0.02em;
     line-height: 1.5;
+    color: var(--backdrop-text-color);
     text-align: center;
     margin-bottom: 16px;
 }
 
 .form-field {
     margin-bottom: 8px;
+}
+
+.comment-form-field {
+    margin-bottom: 16px;
 }
 
 .input-wrapper {
@@ -618,8 +628,13 @@ body {
     padding: 8px 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
     resize: none;
-    outline: none;
+    outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -665,7 +680,7 @@ body {
     display: flex;
 }
 
-.hidden-checkbox {
+.visually-hidden {
     visibility: hidden;
     margin-left: -13px;
 }
@@ -685,7 +700,7 @@ body {
     margin-right: 8px;
 }
 
-.hidden-checkbox:checked+.terms-label .custom-checkbox {
+.visually-hidden:checked+.terms-label .custom-checkbox {
     background-color: #404bbf;
     border: none;
     fill: #f4f4fd;
@@ -771,7 +786,6 @@ body {
     line-height: 1.5;
     letter-spacing: 0.04em;
     padding: 8px 24px;
-    gap: 16px;
     border-radius: 4px;
     min-width: 165px;
     height: 40px;
@@ -779,4 +793,8 @@ body {
     color: #fff;
     cursor: pointer;
     border: none;
+}
+
+.subscribe-icon {
+    margin-left: 16px;
 }
